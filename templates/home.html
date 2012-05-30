@@ -1,1 +1,48 @@
-HELLO!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SoundSynth | Synth</title>
+    <script type="text/javascript" src="{{ STATIC_URL }}timbre.js"></script>
+    <script type="text/javascript">
+    var synth = {
+        waveform : "sin",
+        note : function(base){
+            root    = base;
+            up1     = base * 2;
+
+            osc1 = T(synth.waveform, root).play();
+            osc2 = T(synth.waveform, up1).play();
+
+            timbre.on();
+        },
+        stop : function(){
+            timbre.off();
+            console.log(timbre.dacs)
+        }
+
+
+    };
+
+    </script>
+</head>
+
+<body> 
+    Hello there!
+    <p><a href="javascript:;" onclick="synth.note(220)">Play A</a></p>
+    <p><a href="javascript:;" onclick="synth.note(233)">Play A#</a></p>
+    <p><a href="javascript:;" onclick="synth.note(247)">Play B</a></p>
+    <p><a href="javascript:;" onclick="synth.note(262)">Play C</a></p>
+    <p><a href="javascript:;" onclick="synth.note(277)">Play C#</a></p>
+    <p><a href="javascript:;" onclick="synth.note(294)">Play D</a></p>
+    <p><a href="javascript:;" onclick="synth.note(311)">Play D#</a></p>
+    <p><a href="javascript:;" onclick="synth.note(330)">Play E</a></p>
+    <p><a href="javascript:;" onclick="synth.note(349)">Play F</a></p>
+    <p><a href="javascript:;" onclick="synth.note(370)">Play F#</a></p>
+    <p><a href="javascript:;" onclick="synth.note(392)">Play G</a></p>
+    <p><a href="javascript:;" onclick="synth.note(415)">Play G#</a></p>
+    <p><a href="javascript:;" onclick="synth.note(440)">Play A</a></p>
+    <p><a href="javascript:;" onclick="synth.stop()">Stop</a></p>
+</body>
+
+</html>
+
