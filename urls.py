@@ -5,6 +5,7 @@ from django.conf.urls.defaults import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^synth/', 'synth.views.home', name='synth'),
     # Examples:
     # url(r'^$', 'soundsynth.views.home', name='home'),
     # url(r'^soundsynth/', include('soundsynth.foo.urls')),
